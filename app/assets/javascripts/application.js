@@ -12,4 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require_tree .
+
+$(function() {
+  if($('body').attr('data-controller') == 'pages' && $('body').attr('data-action') == 'index')
+    $(window).scroll(function() {    
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 1) {
+          $(".navbar").addClass("dark-border");
+      } else {
+          $(".navbar").removeClass("dark-border");
+      }
+    });
+  else {
+    $(".navbar").addClass("dark-border");
+  }
+});
