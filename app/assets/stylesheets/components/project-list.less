@@ -1,0 +1,43 @@
+.project-list {
+  list-style: 0;
+  padding: 0;
+
+  &__item {
+    display: inline;
+    margin-bottom: 15px;
+  }
+
+  &__item-container {
+    background-color: #FFF;
+    box-shadow: 0 0 10px lighten(@color-secondary, 45);
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 10px;
+  }
+
+  &__image-container {
+    background-size: 125%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 125px;
+    transition: background-size 250ms ease-in-out;
+
+    &:hover {
+      background-size: 150%;
+    }
+  }
+
+  &__project-title {
+    font-weight: 300;
+    text-transform: lowercase;
+  }
+
+  &__completed-date {
+    font-size: 12px;
+    font-weight: 300;
+  }
+
+  &__actions {
+    margin-top: 10px;
+  }
+}

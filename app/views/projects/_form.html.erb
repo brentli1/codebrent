@@ -1,0 +1,79 @@
+<section class="project-form">
+  <%= form_for(@project, html: { class: 'form-horizontal', role: 'form' }) do |f| %>
+    <div class="form-group">
+      <div class="col-md-2 project-form__label-container">
+        <%= f.label :title, class: 'control-lab' %>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_field :title, class: 'form-control', placeholder: "Enter the project title" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-2 project-form__label-container">
+        <%= f.label :body, class: 'control-lab' %>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-2 project-form__label-container">
+        <%= f.label :github, class: 'control-lab' %>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_field :github, class: 'form-control', placeholder: "Enter github link" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-2 project-form__label-container">
+        <%= f.label :web_url, class: 'control-lab', value: 'Web URL' %>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_field :web_url, class: 'form-control', placeholder: "Enter web link" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-2 project-form__label-container">
+        <%= f.label :complete_date, class: 'control-lab', value: 'Date Completed' %>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_field :complete_date, :class => 'form-control datepicker' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-2 project-form__label-container">
+        <%= f.label :image, class: 'control-lab' %>
+      </div>
+      <div class="col-md-10">
+        <%= f.file_field :image, accept: 'image/jpeg, image/gif, image/png', class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-2 project-form__label-container">
+        <%= f.label :category_ids, 'Categories', class: 'control-lab' %>
+      </div>
+      <div class="col-md-10">
+        <%= f.collection_select :category_ids, Category.all, :id, :name, { selected: @project.categories.map(&:id) }, { multiple: true, class: 'form-control' } %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-8">
+        <%= f.submit class: 'btn btn-primary btn-md' %>
+        <% unless @project.new_record? %>
+          <%= link_to 'Delete Project', project_path(@project), 
+                                        method: :delete, 
+                                        class: 'btn btn-danger btn-md', 
+                                        data: { confirm: "Are you sure you want to remove the project?" } %>
+        <% end %>
+        <%= link_to 'Back to Projects', projects_path, class: 'btn btn-default btn-md' %>
+      </div>
+    </div>
+  <% end %>
+</section>

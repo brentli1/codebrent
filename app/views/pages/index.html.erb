@@ -1,3 +1,10 @@
-<section class="page-home">
-  <h3>Welcome to the homepage</h3>
-</section>
+<div class="page-home">
+  <h3 class="page-title">Latest Projects</h3>
+
+  <%= render 'projects/list' %>
+
+  <div class="center page-home__actions">
+    <%= link_to 'See More Projects!', projects_path, class: 'btn btn-primary btn-md' %>
+    <%= link_to 'Get To Know Me', about_path, class: 'btn btn-default btn-md' %>
+  </div>
+</div>

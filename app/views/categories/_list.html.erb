@@ -1,0 +1,18 @@
+<% if @categories.present? %>
+  <div class="center">
+    <%= will_paginate @categories %>
+  </div>
+  <ul class="category-list">
+    <% @categories.each do |category| %>
+      <li class="category-list__item">
+        <%= link_to category.name, category_path(category), 
+                                   class: 'category-list__cat' %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="center">
+    <%= will_paginate @categories %>
+  </div>
+<% else %>
+  <p class="lead">No Categories Yet!</p>
+<% end %>

@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    if current_user && logged_in?
+    if logged_in?
       flash[:notice] = "You are already signed in."
       redirect_to root_path
     end
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session.delete(:user_id)
     flash[:success] = "You have logged out."
     redirect_to root_path
   end

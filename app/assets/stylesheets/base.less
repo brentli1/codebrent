@@ -8,10 +8,24 @@ body {
   flex-direction: column;
 }
 
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
 .main-body {
   flex: 1;
   padding-bottom: 50px;
   padding-top: 70px;
+
+  @media screen and (max-width: 767px) and (min-width: 0) {
+    width: 100%;
+  }
 }
 
 .navbar {
@@ -22,5 +36,24 @@ body {
   &.dark-border {
     border-bottom: 1px solid @color-secondary !important;
     box-shadow: 0 0 3px @color-secondary !important;
+  }
+}
+
+.page-title {
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+ul.pagination {
+  margin: 0;
+}
+
+.project__add-new {
+  margin-top: 20px;
+}
+
+.page-home {
+  &__actions {
+    margin-top: 30px;
   }
 }

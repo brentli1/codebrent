@@ -1,0 +1,33 @@
+<% if @projects.present? %>
+  <div class="center">
+    <%= will_paginate @projects %>
+  </div>
+  <ul class="project-list clearfix">
+    <% @projects.each do |project| %>
+      <li class="project-list__item col-sm-4">
+        <div class="project-list__item-container">
+          <%= link_to project_path(project) do %>
+            <div class="project-list__image-container" style="background-image: url('<%= project.image %>');"></div>
+            <h4 class="project-list__project-title"><%= project.title %></h4>
+            <p class="project-list__completed-date"><%= project.complete_date.strftime('%B %e, %Y') %></p>
+          <% end %>
+          <% if logged_in? %>
+            <div class="project-list__actions">
+              <%= link_to 'Edit Project', edit_project_path(project), 
+                                        class: 'btn btn-default btn-xs' %>
+              <%= link_to 'Delete Project', project_path(project), 
+                                            method: :delete, 
+                                            data: { confirm: "Are you sure you want to remove the project?" }, 
+                                            class: 'btn btn-danger btn-xs' %>
+            </div>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div class="center">
+    <%= will_paginate @projects %>
+  </div>
+<% else %>
+  <p class="lead">No Projects Yet!</p>
+<% end %>

@@ -27,6 +27,12 @@ gem "sprockets", '3.6.3'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem 'bootstrap-datepicker-rails'
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

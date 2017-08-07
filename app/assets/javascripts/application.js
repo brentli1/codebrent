@@ -13,9 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require vendor/selectize
+//= require bootstrap-datepicker
 //= require_tree .
 
 $(function() {
+  // Scroll addClass for homepage
   if($('body').attr('data-controller') == 'pages' && $('body').attr('data-action') == 'index')
     $(window).scroll(function() {    
       var scroll = $(window).scrollTop();
@@ -29,4 +32,12 @@ $(function() {
   else {
     $(".navbar").addClass("dark-border");
   }
+
+  // Selectize
+  $('select').selectize();
+
+  // Bootstrap Datepicker
+  $('.datepicker').datepicker({
+    format: 'yyyy-mm-dd'
+  });
 });
