@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170807020408) do
+ActiveRecord::Schema.define(version: 20170808013553) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170807020408) do
     t.string   "github"
     t.string   "web_url"
     t.date     "complete_date"
+    t.text     "teaser"
   end
 
   create_table "users", force: :cascade do |t|

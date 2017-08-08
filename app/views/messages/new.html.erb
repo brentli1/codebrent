@@ -1,0 +1,43 @@
+<div class="page-project-edit">
+  <h3 class="page-title">Get in Touch!</h3>
+  <p class="lead">Have some work that you need to get done?  Want to create something amazing together?  Shoot me a line and let's get started!</p>
+
+  <%= render 'common/errors', obj: @message %>
+
+  <section class="message-form">
+    <%= form_for(@message, html: { class: 'form-horizontal', role: 'form' }) do |f| %>
+      <div class="form-group">
+        <div class="col-md-2 message-form__label-container">
+          <%= f.label :name, class: 'control-lab' %>
+        </div>
+        <div class="col-md-10">
+          <%= f.text_field :name, class: 'form-control', placeholder: "Enter your name" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-2 message-form__label-container">
+          <%= f.label :email, class: 'control-lab' %>
+        </div>
+        <div class="col-md-10">
+          <%= f.text_field :email, class: 'form-control', placeholder: "Enter your email" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-2 message-form__label-container">
+          <%= f.label :body, class: 'control-lab' %>
+        </div>
+        <div class="col-md-10">
+          <%= f.text_area :body, class: 'form-control', placeholder: "Tell me something good!" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-8">
+          <%= f.submit value: 'Send Message', class: 'btn btn-primary btn-md' %>
+        </div>
+      </div>
+    <% end %>
+  </section>
+</div>

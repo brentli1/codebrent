@@ -1,0 +1,26 @@
+<div class="page-project-show">
+  <h3 class="page-title"><%= @project.title %></h3>
+  <p class="page-project-show__completed-date">Completed Date: <%= @project.complete_date.strftime('%B %e, %Y') %></p>
+  <%= render 'projects/categories', categories: @project.categories %>
+  <p class="lead"><%= @project.try(:teaser) %></p>
+  <div class="page-project-show__btns">
+    <%= link_to 'View Live', @project.web_url, target: '_blank', class: 'btn btn-primary btn-md' %>
+    <%= link_to 'Github', @project.github, target: '_blank', class: 'btn btn-primary btn-md' %>
+    <% if logged_in? %>
+      <%= link_to 'Edit Project', edit_project_path(@project), 
+                                  class: 'btn btn-default btn-md' %>
+      <%= link_to 'Delete Project', project_path(@project), 
+                                    method: :delete, 
+                                    data: { confirm: "Are you sure you want to remove the project?" }, 
+                                    class: 'btn btn-danger btn-md' %>
+    <% end %>
+  </div>
+  <div class="page-project-show__details-container">
+    <figure class="page-project-show__fig">
+      <%= image_tag @project.image, class: 'page-project-show__img' %>
+    </figure>
+    <div class="page-project-show__details clearfix">
+      <%== @project.body  %>
+    </div>
+  </div>
+</div>

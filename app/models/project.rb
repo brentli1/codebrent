@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
 
   validates :title, presence: true
   validates :body, presence: true
+  validates :teaser, presence: true
   validates :github, presence: true
   validates :web_url, presence: true
   validates :complete_date, presence: true
