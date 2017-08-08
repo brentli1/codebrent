@@ -30,7 +30,7 @@ gem "twitter-bootstrap-rails"
 gem 'bootstrap-datepicker-rails'
 gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
-gem 'carrierwave'
+gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 gem 'fog'
 

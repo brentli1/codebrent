@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: f43c068be56fbc9ca0b007b3ffe2a1c3d325ffa9
+  specs:
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -47,10 +56,6 @@ GEM
       will_paginate
     builder (3.2.3)
     byebug (9.0.6)
-    carrierwave (1.1.0)
-      activemodel (>= 4.0.0)
-      activesupport (>= 4.0.0)
-      mime-types (>= 1.16)
     commonjs (0.2.7)
     concurrent-ruby (1.0.5)
     debug_inspector (0.0.3)
@@ -316,7 +321,7 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   bootstrap-will_paginate (= 0.0.10)
   byebug
-  carrierwave
+  carrierwave!
   fog
   jbuilder (~> 2.0)
   jquery-rails
