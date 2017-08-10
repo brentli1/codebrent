@@ -5,6 +5,12 @@
   &__item {
     display: inline;
     margin-bottom: 15px;
+
+    @media(min-width: 768px) {
+      &:nth-child(3n) {
+        clear: both;
+      }
+    }
   }
 
   &__item-container {
