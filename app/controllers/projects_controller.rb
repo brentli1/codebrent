@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = Project.order('created_at DESC').paginate(page: params[:page], per_page: 12)
+    @projects = Project.order('complete_date DESC').paginate(page: params[:page], per_page: 12)
   end
 
   def show
