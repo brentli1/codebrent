@@ -1,7 +1,13 @@
+<% 
+  show_pagination = local_assigns.fetch :show_pagination, false
+%>
+
 <% if @projects.present? %>
-  <div class="center">
-    <%= will_paginate @projects %>
-  </div>
+  <% if show_pagination %>
+    <div class="center">
+      <%= will_paginate @projects %>
+    </div>
+  <% end %>
   <ul class="project-list clearfix">
     <% @projects.each do |project| %>
       <li class="project-list__item col-sm-4">
@@ -25,9 +31,11 @@
       </li>
     <% end %>
   </ul>
-  <div class="center">
-    <%= will_paginate @projects %>
-  </div>
+  <% if show_pagination %>
+    <div class="center">
+      <%= will_paginate @projects %>
+    </div>
+  <% end %>
 <% else %>
   <p class="lead">No Projects Yet!</p>
 <% end %>
